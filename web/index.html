@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>New User Registration</title>
+        <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                
+                    <script>
+			$("document").ready(function(){
+				$(".btn-info").click(function(){
+					var user=$("#user").val();
+					var address=$("#address").val();
+					var age=$("#age").val();
+					var gender=$("#gender").val();
+				
+                                        if(user == ""){
+                                            $("#Users").show();
+                                            return false;
+                                         }
+                                         if(address == ""){
+                                            $("#Address").show();
+                                            return false;
+                                         }
+                                         if(age == ""){
+                                            $("#Age").show();
+                                            return false;
+                                         }
+                                         if(gender == ""){
+                                            $("#Gender").show();
+                                            return false;
+                                         }
+                                         return true;
+                                });
+			});
+                    </script>
+    </head>
+    <body>
+        <h1 class="row justify-content-center text-secondary"> Add New Employee</h1><br>
+        <div class="container">
+            <form method="get" action="NewUserServlet" class="row justify-content-center">
+                <table>
+                    <tr>
+                        <td></td>
+                        <td><input type='hidden' name='id' value='0'/></td>
+                    </tr>
+                    <tr>
+                        <td><b>Name:</b></td>
+                        <td><input type="text" id="user" name="user" /></td>
+                        
+                    </tr>
+                    <tr>
+                        <td colspan="2"><p style="display:none; color:red;" id="Users">&#128712 Please Enter your name</p></td>
+                    </tr>
+                    <tr>
+                        <td><b>Address:</b></td>
+                        <td><input type="text" id="address" name="address" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><p style="display:none; color:red;" id="Address">&#128712 Please Enter your Address</p></td>
+                    </tr>
+                    <tr>
+                        <td><b>Age:</b></td>
+                        <td><input type="text" id="age" name="age" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><p style="display:none; color:red;" id="Age" >&#128712 Please Enter your age</p></td>
+                    </tr>
+                    <tr>
+                        <td><b>Gender:</b></td>
+                        <td><input type="text" id="gender" name="gender" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><p style="display:none; color:red;" id="Gender">&#128712 Please Enter your Gender</p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" class="btn btn-info btn-block " value="Submit" /></td>
+                    </tr>
+                </table>
+            </form>
+                <a href="ViewServlet" class="row justify-content-center">view employees</a>  
+            
+       </div>
+        
+    </body>
+</html>
+
